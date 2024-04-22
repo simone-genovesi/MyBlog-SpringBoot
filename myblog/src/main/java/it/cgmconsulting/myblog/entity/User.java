@@ -44,7 +44,7 @@ public class User extends CreationUpdate implements UserDetails {
 
     private String bio;
 
-    private boolean enable = true;
+    private boolean enabled = false;
 
     @ManyToMany( fetch = FetchType.EAGER )
     @JoinTable(name = "user_authority",
@@ -84,7 +84,7 @@ public class User extends CreationUpdate implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return enable;
+        return enabled;
     }
 
     @Override
