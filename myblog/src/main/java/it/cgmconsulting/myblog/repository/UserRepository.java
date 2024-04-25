@@ -7,8 +7,10 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-    // SELECT u.id FROM user_ u EHRE username='username' OR email='email'
+    // SELECT u.id FROM user_ u WHERE username='username' OR email='email'
     boolean existsByUsernameOrEmail(String username, String email);
 
     Optional<User> findByUsername(String username);
+
+    boolean existsByMailAndIdNot(String email, int id);
 }

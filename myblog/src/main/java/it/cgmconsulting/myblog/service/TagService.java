@@ -13,58 +13,58 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
+@Slf4j  // fornisce un log
 public class TagService {
 
-    //@Autowired TagRepository tagRepository; // Dependency injection by field
+    private final TagRepository tagRepository; // iniezione avventura con @RequiredArgsConstructor
 
-    private final TagRepository tagRepository;  // Dependency injection by constructor. Il costruttore è generato dall'annotazione di Lombok @RequiredArgsConstructor
-
-    // lista di Tag parametrizzata
+    // lista di tag completa (visibili e no)
     public List<Tag> getAllTags(char visible){
         List<Tag> tags = new ArrayList<>();
-        if(visible == 'A' || visible == 'a')
+        if(visible == 'A'){
             tags = tagRepository.findAllByOrderByTagName();
-        else if (visible == 'Y' || visible == 'y')
-            tags = tagRepository.findByVisibleTrueOrderByTagName();
-        else if (visible == 'N' || visible == 'n')
+        } else if (visible == 'N') {
             tags = tagRepository.findByVisibleFalseOrderByTagName();
-
-        log.info("Tag list contains "+tags.size()+" elements.");
+        }
+        log.info("Tag list contains " + tags.size()+ " elements");
         return tags;
     }
 
+    //cercare uno specifico tag
     public Tag getTag(short id){
-        return tagRepository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("Tag", "id", id));
+        return tagRepository.findById(id).
+                orElseThrow(() -> new ResourceNotFoundException("Tag", "Id", id));
     }
 
-    // inserire un nuovo Tag
+    //inserire un nuovo tag
     public Tag createTag(String tagName){
-        if(tagRepository.existsByTagName(tagName))
+        //controllo che il valore già non esisti
+        if (tagRepository.existsByTagName(tagName)){
             return null;
+        }
         return tagRepository.save(new Tag(tagName));
     }
 
-    // modificare un Tag esistente
+    //modificare un tag esistente
     @Transactional
     public Tag updateTag(String tagName, String newTagName, boolean visible){
-        // trovo il tag da modificare
-        Tag tag = tagRepository.findByTagName(tagName).orElseThrow(
-                () -> new ResourceNotFoundException("Tag", "tagName", tagName));
-
-
-        //verifico che non esista un altro record che abbia già come tag name il valore newTagName
-        if(tagRepository.existsByTagNameAndIdNot(newTagName, tag.getId()))
+        // trovo tag da modifcare
+        Tag tag = tagRepository.findByTagName(tagName).
+                orElseThrow(() -> new ResourceNotFoundException("Tag", "tagName", tagName));
+        // verifico che non esista un altro recond che abbia lo stesso tang name di quello nuovo
+        if(tagRepository.existsByTagNameAndIdNot(newTagName, tag.getId())){
             return null;
-
-        // se non esiste procedo alla sovrascrittura del tagName
+        }
         tag.setTagName(newTagName);
         tag.setVisible(visible);
-        //return tagRepository.save(tag);
+        // con @Transactional si occupa lui di salvare solo se tutte le operazioni vanno a buon fine
+        // in caso contrario tutte le operazioni vengono annullate
+        // funziona solo su elementi già esistenti
         return tag;
     }
 
+    public List<Tag> getAllVisibleTags(){
+        return  tagRepository.findByVisibleTrueOrderByTagName();
+    }
 
-    // cercare uno specifico Tag
 }
