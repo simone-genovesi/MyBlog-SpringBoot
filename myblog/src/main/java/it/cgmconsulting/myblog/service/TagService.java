@@ -21,12 +21,12 @@ public class TagService {
     // lista di tag completa (visibili e no)
     public List<Tag> getAllTags(char visible){
         List<Tag> tags = new ArrayList<>();
-        if(visible == 'A'){
+        if(visible == 'A' || visible == 'a'){
             tags = tagRepository.findAllByOrderByTagName();
-        } else if (visible == 'N') {
+        } else if (visible == 'N' || visible == 'n') {
             tags = tagRepository.findByVisibleFalseOrderByTagName();
         }
-        log.info("Tag list contains " + tags.size()+ " elements");
+        log.info("Tag list contains " + tags.size() + " elements");
         return tags;
     }
 
@@ -48,10 +48,10 @@ public class TagService {
     //modificare un tag esistente
     @Transactional
     public Tag updateTag(String tagName, String newTagName, boolean visible){
-        // trovo tag da modifcare
+        // trovo tag da modificare
         Tag tag = tagRepository.findByTagName(tagName).
                 orElseThrow(() -> new ResourceNotFoundException("Tag", "tagName", tagName));
-        // verifico che non esista un altro recond che abbia lo stesso tang name di quello nuovo
+        // verifico che non esista un altro record che abbia lo stesso tang name di quello nuovo
         if(tagRepository.existsByTagNameAndIdNot(newTagName, tag.getId())){
             return null;
         }

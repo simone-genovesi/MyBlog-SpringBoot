@@ -30,7 +30,7 @@ public class Post extends CreationUpdate {
     @Column(length = 16)
     private String image;
 
-    private LocalDate publicationDate;
+    private LocalDate publicationDate; // SE publicationDate > DATA ODIERNA = NON VISIBILE
 
     private short totComments;
 

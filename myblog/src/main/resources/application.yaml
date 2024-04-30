@@ -72,3 +72,11 @@ application:
   confirmCode:
     # validita espressa in minuti -> 1440 min = 1 day
     validity: 1440
+  image:
+    avatar:
+      size: 5120 # tkb = 1024 * 5 bytes
+      # altezza e larghezza in pixel
+      height: 100
+      width: 100
+      # estensioni delle immagini
+      extensions: jpg, jpeg, png

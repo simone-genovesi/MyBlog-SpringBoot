@@ -89,4 +89,9 @@ public class UserController {
             return new ResponseEntity<>("Email already in use", HttpStatus.BAD_REQUEST);
         return new ResponseEntity<>(me, HttpStatus.OK);
     }
+
+    @PutMapping("/v1/user/remove")
+    public ResponseEntity<?> deleteMe(@AuthenticationPrincipal UserDetails userDetails){
+        return new ResponseEntity<>(authenticationService.deleteMe(userDetails), HttpStatus.OK);
+    }
 }

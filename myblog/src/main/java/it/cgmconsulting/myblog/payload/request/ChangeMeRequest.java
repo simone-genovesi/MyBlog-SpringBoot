@@ -6,15 +6,12 @@ import jakarta.validation.constraints.Size;
 
 public record ChangeMeRequest(
 
-        @NotBlank @Email
-        String email,
-
-        @Size(max = 50, min = 2)
+        @Size(max=50, min=2)
         String firstname,
-
-        @Size(max = 50, min = 2)
+        @Size(max=50, min=2)
         String lastname,
-
-        @Size(max = 255)
-        String bio
+        @Size(max=255)
+        String bio,
+        @NotBlank @Email
+        String email
 ) {}
