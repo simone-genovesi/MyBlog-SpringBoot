@@ -1,8 +1,11 @@
 package it.cgmconsulting.myblog.controller;
 
 import it.cgmconsulting.myblog.payload.request.PostRequest;
+import it.cgmconsulting.myblog.payload.response.PostDetailResponse;
+import it.cgmconsulting.myblog.payload.response.PostResponse;
 import it.cgmconsulting.myblog.service.PostService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -11,6 +14,10 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,7 +32,10 @@ public class PostController {
 
     @GetMapping("/v0/posts")
     public ResponseEntity<?> getAllVisiblePosts(){
-        return new ResponseEntity<>(postService.getAllVisiblePosts(), HttpStatus.OK);
+        List<PostResponse> list = postService.getAllVisiblePosts();
+        if(list.isEmpty())
+            return new ResponseEntity<>("no posts found", HttpStatus.NOT_FOUND);
+        else return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
     @PostMapping("/v1/posts")
@@ -46,16 +56,18 @@ public class PostController {
         else return new ResponseEntity<>("You cannot edit this post", HttpStatus.UNAUTHORIZED);
     }
 
-    @PatchMapping("/v1/posts/publish")
+    @PatchMapping("/v1/posts/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<?> publishPost(@RequestParam int id){
-        return new ResponseEntity<>(postService.publishPost(id), HttpStatus.OK);
+    public ResponseEntity<?> publishPost(@PathVariable int id, @RequestParam @FutureOrPresent LocalDate publicationDate){
+        return new ResponseEntity<>(postService.publishPost(id, publicationDate), HttpStatus.OK);
     }
 
-    @PatchMapping("/v1/posts/hide")
-    @PreAuthorize("hasAuthority('ADMIN')")
-    public ResponseEntity<?> hidePost(@RequestParam int id){
-        return new ResponseEntity<>(postService.hidePost(id), HttpStatus.OK);
+    @PatchMapping("/v1/posts/tags/{id}")
+    @PreAuthorize("hasAnyAuthority('WRITER', 'ADMIN')")
+    public ResponseEntity<?> addUpdateTagsToPost(
+            @AuthenticationPrincipal UserDetails userDetails,
+            @PathVariable int id,
+            @RequestParam Set<String> tagNames){
+        return new ResponseEntity<>("Tags added to post", HttpStatus.OK);
     }
-
 }
