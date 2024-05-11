@@ -6,13 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
-public class PostResponse {
-
+public class BookmarkResponse {
     private int id;
     private String title;
-    private String overview;
-    private String image;
-    private short totComments;
-    private double average;
-
 }

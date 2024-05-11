@@ -7,7 +7,7 @@ import lombok.*;
 import org.hibernate.annotations.Check;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
 public class Rating extends CreationUpdate {
 
     @EmbeddedId

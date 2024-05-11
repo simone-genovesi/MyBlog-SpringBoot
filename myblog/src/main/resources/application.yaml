@@ -54,6 +54,16 @@ spring-doc:
     path: /swagger-ui.html
 
 logging:
+  file:
+    name: /Users/Public/myblog/log/myblog.txt
+  logback:
+    rolling-policy:
+      max-file-size: 1024KB
+      max-history: 7
+      file-name-pattern: /Users/Public/myblog/log/%d{yyyy-MM, aux}/myblog.%d{yyyy-MM-dd}.%i.txt
+  pattern:
+    #console: "%d %-5level [%thread] %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
   level:
     it.cgmconsulting.myblog: info
     org.hibernate.orm.jdbc.bind: trace
@@ -80,3 +90,13 @@ application:
       width: 100
       # estensioni delle immagini
       extensions: jpg, jpeg, png
+    post:
+      size: 102400 # tkb = 1024 * 5 bytes
+      # altezza e larghezza in pixel
+      height: 300
+      width: 600
+      # estensioni delle immagini
+      extensions: jpg, jpeg
+      path: /Users/Public/myblog/images/
+  comment:
+    time: 60

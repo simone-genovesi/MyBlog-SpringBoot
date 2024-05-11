@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -29,7 +30,7 @@ public class Post extends CreationUpdate {
     @Column(nullable = false, length = 65535) // 64kb
     private String content;
 
-    @Column(length = 16)
+    @Column(length = 16) // Nome immagine => id.estensione
     private String image;
 
     private LocalDate publicationDate; // SE publicationDate > DATA ODIERNA = NON VISIBILE
@@ -57,9 +58,10 @@ public class Post extends CreationUpdate {
         tag.getPosts().remove(this);
     }
 
-    public Post(String title, String content, User userId) {
+    public Post(String title, String content, User userId, String overview) {
         this.title = title;
         this.content = content;
         this.userId = userId;
+        this.overview = overview;
     }
 }
