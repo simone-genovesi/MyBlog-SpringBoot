@@ -4,7 +4,6 @@ import it.cgmconsulting.myblog.entity.Post;
 import it.cgmconsulting.myblog.entity.Rating;
 import it.cgmconsulting.myblog.entity.RatingId;
 import it.cgmconsulting.myblog.entity.User;
-import it.cgmconsulting.myblog.exception.ResourceNotFoundException;
 import it.cgmconsulting.myblog.repository.RatingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,9 +30,18 @@ public class RatingService {
     }
 
     public byte getMyRate(UserDetails userDetails, int postId) {
-
         // recuperare il voto dato via SQL NATIVO
         // qualora l'utente non abbia votato, restituisce 0
-        return 0;
+        User user = (User) userDetails;
+        return ratingRepository.getMyRating(postId, user.getId());
     }
+
+/*
+    public Byte getMyRate(UserDetails userDetails, int postId) {
+        // recuperare il voto dato via SQL NATIVO
+        // qualora l'utente non abbia votato, restituisce 0
+        User user = (User) userDetails;
+        return ratingRepository.getMyRating(postId, user.getId()).orElseGet(() -> (byte) 0);
+    }
+ */
 }
