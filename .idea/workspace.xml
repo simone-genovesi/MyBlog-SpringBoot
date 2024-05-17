@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c5bd8811-3501-454a-bdc9-29c71ca10e8d" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2gXtzGIps7Z6LWa60g68N3a4yUk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Banner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Myblog.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Utente/Documents/GitHub/MyBlog-SpringBoot/banner/src/main/resources&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Utente\Documents\GitHub\MyBlog-SpringBoot\banner\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Banner">
+    <configuration name="Banner" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="MYSQL_DATABASE_NAME" value="banner" />
+        <env name="MYSQL_HOSTNAME" value="localhost" />
+        <env name="MYSQL_PASSWORD" value="Lord1234-" />
+        <env name="MYSQL_PORT" value="3306" />
+        <env name="MYSQL_USERNAME" value="root" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="it.cgmconsulting.banner.BannerApplication" />
+      <module name="banner" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Myblog" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <envs>
+        <env name="MAIL" value="smn.gnv92@gmail.com" />
+        <env name="MAIL_PASSWORD" value="pnwm ehvl ecdx yavd" />
+        <env name="MAIL_USERNAME" value="smn.gnv92" />
+        <env name="MYSQL_DATABASE_NAME" value="myblog" />
+        <env name="MYSQL_HOSTNAME" value="localhost" />
+        <env name="MYSQL_PASSWORD" value="Lord1234-" />
+        <env name="MYSQL_PORT" value="3306" />
+        <env name="MYSQL_USERNAME" value="root" />
+      </envs>
+      <option name="MAIN_CLASS_NAME" value="it.cgmconsulting.myblog.MyblogApplication" />
+      <module name="myblog" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Myblog" />
+      <item itemvalue="Application.Banner" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5bd8811-3501-454a-bdc9-29c71ca10e8d" name="Changes" comment="" />
+      <created>1715856010975</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715856010975</updated>
+    </task>
+    <servers />
+  </component>
+</project>

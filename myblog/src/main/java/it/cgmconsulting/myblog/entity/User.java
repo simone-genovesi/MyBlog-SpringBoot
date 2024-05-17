@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -58,10 +59,16 @@ public class User extends CreationUpdate implements UserDetails {
             inverseJoinColumns = @JoinColumn(name = "post_id"))
     private Set<Post> preferredPosts = new HashSet<>();
 
+    private LocalDateTime bannedUntil;
+
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
+    }
+
+    public boolean isBanned(){
+        return this.bannedUntil != null;
     }
 
     /* Inherited methods from org.springframework.security.core.userdetails.UserDetails */

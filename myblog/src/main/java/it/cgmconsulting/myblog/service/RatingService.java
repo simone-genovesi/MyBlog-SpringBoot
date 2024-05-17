@@ -26,7 +26,7 @@ public class RatingService {
 
     public void deleteRate(UserDetails userDetails, int postId) {
         User user = (User) userDetails;
-        ratingRepository.deleteRating(user.getId(), postId);
+        ratingRepository.deleteRating(postId, user.getId());
     }
 
     public byte getMyRate(UserDetails userDetails, int postId) {

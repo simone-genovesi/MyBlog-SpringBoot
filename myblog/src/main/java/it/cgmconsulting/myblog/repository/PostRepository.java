@@ -1,7 +1,6 @@
 package it.cgmconsulting.myblog.repository;
 
 import it.cgmconsulting.myblog.entity.Post;
-import it.cgmconsulting.myblog.payload.response.BookmarkResponse;
 import it.cgmconsulting.myblog.payload.response.PostDetailResponse;
 import it.cgmconsulting.myblog.payload.response.PostKeywordResponse;
 import it.cgmconsulting.myblog.payload.response.PostResponse;
