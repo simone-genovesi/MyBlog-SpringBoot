@@ -7,10 +7,9 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class Campaign {
 
-    //
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;

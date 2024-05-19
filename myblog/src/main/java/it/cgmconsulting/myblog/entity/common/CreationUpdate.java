@@ -19,5 +19,5 @@ public class CreationUpdate implements Serializable {
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
 }

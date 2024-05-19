@@ -17,7 +17,7 @@ public interface ReportingRepository extends JpaRepository<Reporting, ReportingI
             "r.status, " +
             "r.reason.reasonId.reason, " +
             "r.createdAt, " +
-            "r.updateAt" +
+            "r.updatedAt" +
             ") FROM Reporting r " +
             "WHERE r.status = :status")
     Page<ReportingResponse> getReportings(ReportingStatus status, Pageable pageable);
@@ -29,7 +29,7 @@ public interface ReportingRepository extends JpaRepository<Reporting, ReportingI
             "r.reportingId.commentId.comment, " +
             "r.reporter.username, " +
             "r.createdAt, " +
-            "r.updateAt" +
+            "r.updatedAt" +
             ") FROM Reporting r " +
             "WHERE r.reportingId.commentId.id = :commentId")
     ReportingDetailResponse getReportDetail(int commentId);

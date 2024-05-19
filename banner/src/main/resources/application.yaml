@@ -58,11 +58,11 @@ logging:
 # CUSTOM PROPERTIES
 application:
   image:
-    post:
+    banner:
       size: 51200 # tkb = 1024 * 50
       # altezza e larghezza in pixel
       height: 200
-      width: 600
+      width: 200
       # estensioni delle immagini
       extensions: jpg, jpeg
       path: /Users/Public/banner/images/

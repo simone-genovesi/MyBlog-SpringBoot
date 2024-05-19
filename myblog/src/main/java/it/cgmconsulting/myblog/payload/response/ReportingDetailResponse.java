@@ -16,5 +16,5 @@ public class ReportingDetailResponse {
     private String comment;
     private String reporter;
     private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
 }

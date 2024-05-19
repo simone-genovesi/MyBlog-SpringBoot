@@ -41,8 +41,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Utente\Documents\GitHub\MyBlog-SpringBoot\banner\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="it.cgmconsulting.banner.service" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Banner">
+  <component name="RunManager" selected="Application.Myblog">
     <configuration name="Banner" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="openjdk-21" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />

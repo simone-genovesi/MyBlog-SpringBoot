@@ -14,5 +14,5 @@ public class ReportingResponse {
     private ReportingStatus status;
     private String reason;
     private LocalDateTime createdAt;
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
 }
