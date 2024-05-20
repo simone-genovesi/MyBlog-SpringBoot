@@ -53,10 +53,7 @@ public class MainService {
         Pageable pageable = PageRequest.of(pageNumber, pageSize,
                 Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
         Page<Company> companies = companyRepository.findAll(pageable);
-        List<Company> companyResponses = new ArrayList<>();
-        if(companies.hasContent())
-            companyResponses = companies.getContent();
-        return companyResponses;
+        return companies.getContent();
     }
 
     public Map<Boolean, Object> addCampaign(LocalDate startDate, LocalDate endDate, int companyId, String product, MultipartFile file) {
@@ -96,8 +93,31 @@ public class MainService {
                 .startDate(startDate)
                 .build();
         campaignRepository.save(campaign);
+
+        if(!imageService.uploadImage(file, campaign.getId(), path)){
+            response.put(false, "Something went wrong uploading the image");
+            return response;
+        }
+
+        campaign.setImage(path+campaign.getImage());
+
         response.put(true, campaign);
 
         return response;
+    }
+
+    public List<Campaign> getCampaigns(int pageNumber, int pageSize, String sortBy, String direction) {
+        Pageable pageable = PageRequest.of(pageNumber, pageSize,
+                Sort.Direction.valueOf(direction.toUpperCase()), sortBy);
+        Page<Campaign> campaigns = campaignRepository.findAll(pageable);
+        return campaigns.getContent();
+    }
+
+    public String getBanner(String id) {
+        String banner = campaignRepository.getBanner(id, LocalDate.now());
+        if(banner != null)
+            return path+banner;
+        return null;
+
     }
 }

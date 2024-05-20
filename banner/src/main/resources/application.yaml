@@ -57,6 +57,7 @@ logging:
 
 # CUSTOM PROPERTIES
 application:
+  token: aUSYcdfa8s76TcaSycgq7wgcy23g23yC3yga8S7dgasyGC
   image:
     banner:
       size: 51200 # tkb = 1024 * 50

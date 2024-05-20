@@ -1,9 +1,11 @@
 package it.cgmconsulting.banner.controller;
 
+import it.cgmconsulting.banner.entity.Campaign;
 import it.cgmconsulting.banner.entity.Company;
 import it.cgmconsulting.banner.service.MainService;
 import jakarta.validation.constraints.*;
 import lombok.RequiredArgsConstructor;
+import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -78,8 +80,43 @@ public class MainController {
     ){
         Map<Boolean, Object> response = mainService.addCampaign(startDate, endDate, companyId, product, file);
 
+        if (response.containsKey(Boolean.FALSE))
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body(response.get(Boolean.FALSE));
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(response);
+                .body(response.get(Boolean.TRUE));
+
+    }
+
+    @GetMapping("/campaigns")
+    public ResponseEntity<?> getCampaigns(
+            @RequestParam(defaultValue = "0") int pageNumber, // numero di pagina da cui partire
+            @RequestParam(defaultValue = "10") int pageSize, // numero di elementi per pagina
+            @RequestParam(defaultValue = "endDate") String sortBy, // indica la colonna su cui eseguire l'ordinamento
+            @RequestParam(defaultValue = "DESC") String direction // indica se l'ordinamento è ASC o DESC
+    ) {
+        //elenco campagne paginate e ordinate di default per endDate DESC
+        List<Campaign> list = mainService.getCampaigns(pageNumber, pageSize, sortBy, direction);
+        if(list.isEmpty())
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body("no campaigns found");
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(list);
+    }
+
+    @GetMapping("/api/campaigns")
+    public ResponseEntity<?> getBanner(@RequestHeader("Authorization") String id) {
+        String banner = mainService.getBanner(id);
+        if (banner != null)
+            return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(banner);
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(null);
     }
 }
