@@ -32,12 +32,16 @@ public class MainController {
      * COMPANY CONTROLLERS
      */
 
-    @PostMapping("/company")
+    @PostMapping("/companies")
     public ResponseEntity<?> addCompany(@RequestParam @NotBlank @Size(min = 1, max = 255) String companyName){
-//        return new ResponseEntity<>(mainService.addCompany(companyName), HttpStatus.CREATED);
+        Company company = mainService.addCompany(companyName);
+        if(company != null)
+            return ResponseEntity
+                    .status(HttpStatus.CREATED)
+                    .body(company);
         return ResponseEntity
-                .status(HttpStatus.CREATED)
-                .body(mainService.addCompany(companyName));
+                .status(HttpStatus.CONFLICT)
+                .body("Invalid company name. Try another name.");
     }
 
     @GetMapping("/companies/{id}")

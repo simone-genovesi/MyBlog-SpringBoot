@@ -5,17 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c5bd8811-3501-454a-bdc9-29c71ca10e8d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/exception/ExceptionManagement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/exception/ResourceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/service/BannerFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/controller/BannerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/service/BannerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/configuration/SendNewsletter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/entity/Consent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/entity/ConsentId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/entity/enumeration/Frequency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/repository/ConsentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/service/ConsentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/repository/CampaignRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/repository/CampaignRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/service/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/exception/ExceptionManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/exception/ExceptionManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/repository/CompanyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/repository/CompanyRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/service/MainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/service/MainService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/banner/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/banner/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/MyblogApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/MyblogApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/mail/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/mail/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/payload/request/SignupRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/payload/request/SignupRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/repository/PostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/myblog/src/main/java/it/cgmconsulting/myblog/service/PostService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +34,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -37,6 +47,7 @@
     <option name="projectConfigVersion" value="5" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/6.1.5/spring-web-6.1.5.jar!/org/springframework/http/HttpStatus.class" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/banner/src/main/java/it/cgmconsulting/banner/service/ImageService.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -50,21 +61,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Banner.executor": "Run",
-    "Application.Myblog.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Utente/Documents/GitHub/MyBlog-SpringBoot/banner/src/main/java/it/cgmconsulting/banner",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Banner.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Myblog.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Utente/Documents/GitHub/MyBlog-SpringBoot/banner/src/main/java/it/cgmconsulting/banner&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Utente\Documents\GitHub\MyBlog-SpringBoot\banner\src\main\java\it\cgmconsulting\banner" />
@@ -84,6 +95,7 @@
         <env name="MYSQL_PASSWORD" value="Lord1234-" />
         <env name="MYSQL_PORT" value="3306" />
         <env name="MYSQL_USERNAME" value="root" />
+        <env name="BANNER_TOKEN" value="aUSYcdfa8s76TcaSycgq7wgcy23g23yC3yga8S7dgasyGC" />
       </envs>
       <option name="MAIN_CLASS_NAME" value="it.cgmconsulting.banner.BannerApplication" />
       <module name="banner" />
@@ -111,8 +123,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Myblog" />
       <item itemvalue="Application.Banner" />
+      <item itemvalue="Application.Myblog" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

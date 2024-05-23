@@ -19,4 +19,8 @@ public class SignupRequest {
             message = "La password può contenere solo caratteri maiuscoli e/o minuscoli e numeri. " +
                       "La lunghezza deve essere compresa tra 6 e 10 caratteri")
     private String password;
+
+    private boolean acceptRules;
+
+    private boolean sendNewsLetter;
 }

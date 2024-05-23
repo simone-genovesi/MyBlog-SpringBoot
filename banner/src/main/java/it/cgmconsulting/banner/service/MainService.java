@@ -38,11 +38,14 @@ public class MainService {
     private final ImageService imageService;
 
     public Company addCompany(String companyName) {
-        return companyRepository.save(
-                Company.builder()
-                        .companyName(companyName)
-                        .build()
-        );
+        boolean existsCompany = companyRepository.existsByCompanyName(companyName);
+        if(!existsCompany)
+            return companyRepository.save(
+                    Company.builder()
+                            .companyName(companyName)
+                            .build()
+            );
+        return null;
     }
 
     public Optional<Company> getCompany(int id){
@@ -118,6 +121,5 @@ public class MainService {
         if(banner != null)
             return path+banner;
         return null;
-
     }
 }
